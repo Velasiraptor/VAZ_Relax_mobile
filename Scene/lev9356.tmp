@@ -1,0 +1,1402 @@
+[gd_scene load_steps=38 format=3 uid="uid://dx1y8pvqfwb0"]
+
+[ext_resource type="Script" path="res://Scene/level_1.gd" id="1_47o3d"]
+[ext_resource type="Texture2D" uid="uid://dqjpjd0mjvfmq" path="res://Sprites/Sky/Sky_stars.png" id="1_cfw26"]
+[ext_resource type="PackedScene" uid="uid://cn4ac4xxm1x1x" path="res://Scene/Locations/location_asphalt.tscn" id="1_p8qa5"]
+[ext_resource type="Texture2D" uid="uid://dtx3sr3xd14v8" path="res://Sprites/Sky/moon.png" id="2_7ljca"]
+[ext_resource type="Texture2D" uid="uid://bvxvct14m51yi" path="res://Sprites/Sky/mountain.png" id="2_arat0"]
+[ext_resource type="PackedScene" uid="uid://bqbt5xgw0keiv" path="res://Scene/Player/player.tscn" id="2_phrg6"]
+[ext_resource type="Texture2D" uid="uid://bbxgeh04d06ml" path="res://Sprites/Background_items/tree_1.png" id="3_p0g3o"]
+[ext_resource type="Texture2D" uid="uid://cv0ms4t4nsch7" path="res://Sprites/Lighter_big.png" id="3_p3ali"]
+[ext_resource type="Texture2D" uid="uid://cnhpupgtdcxm5" path="res://Sprites/Background_items/tree_2.png" id="4_gkj8n"]
+[ext_resource type="Texture2D" uid="uid://bbf4k4o4gffja" path="res://Sprites/Sky/cloud_1.png" id="4_jvxcl"]
+[ext_resource type="Texture2D" uid="uid://bdyw0dijt5idv" path="res://Sprites/light_1.png" id="5_bdcp8"]
+[ext_resource type="Texture2D" uid="uid://bdaaarckddg4r" path="res://Sprites/Sky/Paris.png" id="5_f70mv"]
+[ext_resource type="Texture2D" uid="uid://bfcotmfj24kjk" path="res://Sprites/Sky/cloud_2.png" id="5_o2qtq"]
+[ext_resource type="Texture2D" uid="uid://bqoprm1apxiff" path="res://Sprites/light_2.png" id="6_he4sy"]
+[ext_resource type="Texture2D" uid="uid://b23hy2f0qd3bf" path="res://Sprites/Items/smoke.png" id="6_kedpk"]
+[ext_resource type="Texture2D" uid="uid://ljxjukin0oc3" path="res://Sprites/Background_items/forest.png" id="10_lgaic"]
+[ext_resource type="Texture2D" uid="uid://dejlsgci5uctk" path="res://Sprites/Sky/Moscow.png" id="12_cyrm0"]
+[ext_resource type="Texture2D" uid="uid://c6dqlwv8aq86v" path="res://Sprites/Background_items/tree_3.png" id="13_uwy6o"]
+[ext_resource type="Texture2D" uid="uid://cr7mhxwf6pcui" path="res://Sprites/Items/sign.png" id="14_jmte8"]
+[ext_resource type="PackedScene" uid="uid://divrjcvikptcy" path="res://Scene/UI/ui.tscn" id="18_eh26u"]
+[ext_resource type="FontFile" uid="uid://c3bko54iadpdh" path="res://Font_Russia.ttf" id="33_y1ter"]
+[ext_resource type="AudioStream" uid="uid://dvr58kgd48dt4" path="res://Sounds/Music/Gimn_Rossii.mp3" id="45_gsxbu"]
+[ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://Sprites/key/arrow_down.png" id="46_4cf8k"]
+[ext_resource type="AudioStream" uid="uid://b7pb0obeu4vy5" path="res://Sounds/Music/Music_1.mp3" id="47_eclma"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://Sprites/key/arrow_left.png" id="47_gfbc6"]
+[ext_resource type="AudioStream" uid="uid://b6hbguetpudfj" path="res://Sounds/Durov_start.mp3" id="47_ogad5"]
+[ext_resource type="AudioStream" uid="uid://bjsvig15rtaju" path="res://Sounds/Music/Music_2.mp3" id="48_h45a2"]
+[ext_resource type="Texture2D" uid="uid://bbjc54bmpv3f8" path="res://Sprites/key/arrow_right.png" id="48_j2nt4"]
+[ext_resource type="AudioStream" uid="uid://bmsvwxdkuu2bt" path="res://Sounds/Music/Music_3.mp3" id="49_c1v3s"]
+[ext_resource type="Texture2D" uid="uid://d04bqc5v3befo" path="res://Sprites/key/arrow_up.png" id="49_yfxjo"]
+[ext_resource type="AudioStream" uid="uid://cj3nlpa1t872o" path="res://Sounds/Music/Music_4.mp3" id="50_brh81"]
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://Sprites/key/space.png" id="50_c3lma"]
+[ext_resource type="AudioStream" uid="uid://cabalxg7cervs" path="res://Sounds/Music/Music_5.mp3" id="51_8vdd3"]
+
+[sub_resource type="Animation" id="Animation_60kfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1564, -1738)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9564, -1738)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17564, -1738)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25564, -1738)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ParallaxLayer3/Cloud1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2477, -1570)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ParallaxLayer3/Cloud2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10439, -1989)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ParallaxLayer3/Cloud3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17499, -2078)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ParallaxLayer3/Cloud4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25817, -1621)]
+}
+
+[sub_resource type="Animation" id="Animation_l0td1"]
+resource_name = "cloud_move"
+length = 180.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1564, -1738), Vector2(964, -1738)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9564, -1738), Vector2(8964, -1738)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(17564, -1738), Vector2(16964, -1738)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25564, -1738), Vector2(24964, -1738)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ParallaxLayer3/Cloud1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2477, -1570), Vector2(1877, -1570)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ParallaxLayer3/Cloud2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10439, -1989), Vector2(9839, -1989)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ParallaxLayer3/Cloud3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(17499, -2078), Vector2(16899, -2078)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ParallaxLayer3/Cloud4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 180),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25817, -1621), Vector2(25217, -1621)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5c8cm"]
+_data = {
+"RESET": SubResource("Animation_60kfk"),
+"cloud_move": SubResource("Animation_l0td1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2260"]
+size = Vector2(57, 768)
+
+[node name="Level_1" type="Node2D" groups=["Language", "Level_1"]]
+script = ExtResource("1_47o3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0117647, 0.176471, 1)
+
+[node name="SkyStars" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ColorRect"]
+position = Vector2(944, -154)
+scale = Vector2(1.25, 1.01245)
+texture = ExtResource("1_cfw26")
+
+[node name="Mountain" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ColorRect/SkyStars"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(60.8, 728.925)
+scale = Vector2(0.593752, 0.67375)
+texture = ExtResource("2_arat0")
+
+[node name="Moon" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ColorRect/SkyStars"]
+modulate = Color(0.835294, 0.835294, 0.835294, 1)
+position = Vector2(-465.6, 308.163)
+rotation = -3.14159
+scale = Vector2(0.2, 0.23)
+texture = ExtResource("2_7ljca")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -99
+
+[node name="ParallaxLayer_city" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+position = Vector2(2952, -15)
+motion_scale = Vector2(0.08, 1)
+
+[node name="Paris" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city"]
+position = Vector2(3000, -765)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("5_f70mv")
+
+[node name="Smoke_R" type="Node2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris"]
+position = Vector2(-23.8182, -3.45453)
+rotation = 0.0303246
+
+[node name="Smoke" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke5" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke6" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke7" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke8" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke9" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke10" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke11" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke12" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke13" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke14" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke15" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke16" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke17" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke18" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke19" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke20" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke21" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke22" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_R"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke_L" type="Node2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris"]
+position = Vector2(-129.818, 424.364)
+rotation = 3.85743
+
+[node name="Smoke" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke5" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke6" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke7" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke8" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke9" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke10" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke11" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke12" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke13" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke14" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke15" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke16" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke17" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke18" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke19" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke20" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke21" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="Smoke22" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer_city/Paris/Smoke_L"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(420.364, 59.0909)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_kedpk")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+position = Vector2(2952, -15)
+motion_scale = Vector2(0.1, 1)
+
+[node name="Cloud1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer2"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(1564, -1738)
+scale = Vector2(2.24722, 1.72769)
+texture = ExtResource("4_jvxcl")
+
+[node name="Cloud2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer2"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(9564, -1738)
+scale = Vector2(2.24722, 1.72769)
+texture = ExtResource("4_jvxcl")
+
+[node name="Cloud3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer2"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(17564, -1738)
+scale = Vector2(2.24722, 1.72769)
+texture = ExtResource("4_jvxcl")
+
+[node name="Cloud4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer2"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(25564, -1738)
+scale = Vector2(2.24722, 1.72769)
+texture = ExtResource("4_jvxcl")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+position = Vector2(2952, -15)
+motion_scale = Vector2(0.14, 1)
+
+[node name="Cloud1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(2477, -1570)
+scale = Vector2(1.20221, 1.30698)
+texture = ExtResource("5_o2qtq")
+
+[node name="Cloud2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(10439, -1989)
+scale = Vector2(1.20221, 1.30698)
+texture = ExtResource("5_o2qtq")
+
+[node name="Cloud3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(17499, -2078)
+scale = Vector2(1.20221, 1.30698)
+texture = ExtResource("5_o2qtq")
+
+[node name="Cloud4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(25817, -1621)
+scale = Vector2(1.20221, 1.30698)
+texture = ExtResource("5_o2qtq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ParallaxBackground2"]
+root_node = NodePath("../ParallaxLayer2")
+libraries = {
+"": SubResource("AnimationLibrary_5c8cm")
+}
+autoplay = "cloud_move"
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+position = Vector2(2952, -15)
+motion_scale = Vector2(0.6, 1)
+
+[node name="Tree1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(6491, -345)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(14883, -482)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(24853, -338)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(35069, -493)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree5" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(45553, -339)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree6" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(57176, -485)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree7" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(68553, -358)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree8" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(81205, -474)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree9" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(95023, -340)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree10" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(101583, -398)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree11" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(110077, -354)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree12" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(118469, -491)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree13" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(128439, -347)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree14" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(138655, -502)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree15" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(149139, -348)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree16" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(160762, -494)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree17" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(172139, -367)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree18" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(184791, -483)
+texture = ExtResource("4_gkj8n")
+
+[node name="Tree19" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(198609, -349)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree20" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer4"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+position = Vector2(205169, -407)
+texture = ExtResource("4_gkj8n")
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -1
+
+[node name="ParallaxLayer_Home" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground3"]
+position = Vector2(-2852, -94)
+
+[node name="Forest2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer_Home"]
+position = Vector2(116880, -1032)
+scale = Vector2(6, 6)
+texture = ExtResource("10_lgaic")
+
+[node name="Forest" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer_Home"]
+position = Vector2(123696, -1128)
+scale = Vector2(6, 6)
+texture = ExtResource("10_lgaic")
+flip_h = true
+
+[node name="Moscow" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer_Home"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(128182, -1181)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("12_cyrm0")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground3"]
+
+[node name="LighterBig" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(12946, -654)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig2" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(29289, -654)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig3" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(45789, -654)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig3"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig4" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(62289, -654)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig4"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig5" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(77470, -627)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig5"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig6" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(93470, -627)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig6"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="LighterBig7" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(109470, -627)
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/LighterBig7"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+
+[node name="Lighter_Moscow" type="Node2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(126135, -524)
+scale = Vector2(0.5, 0.5)
+
+[node name="Lighter_Chipi" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/Lighter_Moscow"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(722, -212)
+texture = ExtResource("3_p3ali")
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/Lighter_Moscow"]
+modulate = Color(1, 0.960784, 0.901961, 0.172549)
+show_behind_parent = true
+position = Vector2(-584.004, -62)
+rotation = -7.19596
+scale = Vector2(1.35488, 1.28221)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer/Lighter_Moscow"]
+modulate = Color(1, 0.960784, 0.901961, 0.286275)
+show_behind_parent = true
+position = Vector2(-612, -74)
+rotation = 0.678571
+scale = Vector2(1.80681, 1.43966)
+texture = ExtResource("6_he4sy")
+
+[node name="Big_lighter_light" type="ParallaxBackground" parent="CanvasLayer"]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/Big_lighter_light"]
+
+[node name="LighterBig" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(12946, -654)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig"]
+modulate = Color(1, 0.912524, 0.787043, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig2" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(29289, -654)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig2"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig2"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig3" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(45789, -654)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig3"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig3"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig4" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(62289, -654)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig4"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig4"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig5" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(77470, -627)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig5"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig5"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig6" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(93470, -627)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig6"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig6"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig7" type="Node2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer"]
+position = Vector2(109470, -627)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig7"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(467.949, -14.9218)
+rotation = -7.62417
+scale = Vector2(1.042, 0.903772)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/Big_lighter_light/ParallaxLayer/LighterBig7"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(300, 951)
+rotation = 0.250361
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="CanvasLayer"]
+layer = 2
+
+[node name="small_lighter" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground5"]
+
+[node name="LighterBig" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(4655, 67)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig5" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(20655, 67)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig5"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig5"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig5"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig9" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(37200, 78)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig9"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig9"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig9"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig13" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(53200, 78)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig13"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig13"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig13"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig17" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(68963, 85)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig17"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig17"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig17"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig21" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(84963, 85)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig21"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig21"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig21"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig25" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(100770, 97)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig25"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig25"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig25"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="LighterBig29" type="Node2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(116680, 93)
+
+[node name="Light1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig29"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1508, -313)
+rotation = -2.01266
+scale = Vector2(0.728324, 0.773228)
+texture = ExtResource("5_bdcp8")
+
+[node name="Light2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig29"]
+modulate = Color(1, 0.913725, 0.788235, 0.172549)
+position = Vector2(1873, 175)
+rotation = -0.437089
+scale = Vector2(1.63743, 0.861302)
+texture = ExtResource("6_he4sy")
+
+[node name="LighterBig" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter/LighterBig29"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1089, -220)
+texture = ExtResource("3_p3ali")
+flip_h = true
+
+[node name="Tree3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/small_lighter"]
+position = Vector2(-222, -419)
+texture = ExtResource("13_uwy6o")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground5"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-2274, 749)
+
+[node name="Tree1" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(6491, -345)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(24853, -338)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree5" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(45553, -339)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree7" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(68553, -358)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree9" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(95023, -340)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Tree11" type="Sprite2D" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4"]
+modulate = Color(0.231373, 0.231373, 0.231373, 1)
+position = Vector2(110077, -354)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_p0g3o")
+
+[node name="Location_asphalt_top" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer4" instance=ExtResource("1_p8qa5")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2602, -29)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Area_start" type="Area2D" parent="."]
+position = Vector2(2363, -257)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sign" type="Sprite2D" parent="Area_start"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -218)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("14_jmte8")
+
+[node name="Label" type="Label" parent="Area_start"]
+offset_left = -74.0
+offset_top = -394.0
+offset_right = 74.0
+offset_bottom = -322.0
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_start"]
+position = Vector2(0.5, 374)
+shape = SubResource("RectangleShape2D_s2260")
+debug_color = Color(0.313726, 0.619608, 0.270588, 0.419608)
+
+[node name="Area_finish" type="Area2D" parent="."]
+position = Vector2(120617, -302)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sign" type="Sprite2D" parent="Area_finish"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -218)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("14_jmte8")
+
+[node name="Label" type="Label" parent="Area_finish"]
+offset_left = -74.0
+offset_top = -394.0
+offset_right = 74.0
+offset_bottom = -322.0
+theme_override_font_sizes/font_size = 50
+text = "FINISH"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_finish"]
+position = Vector2(0.5, 374)
+shape = SubResource("RectangleShape2D_s2260")
+debug_color = Color(0.313726, 0.619608, 0.270588, 0.419608)
+
+[node name="Location_asphalt" parent="." instance=ExtResource("1_p8qa5")]
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_phrg6")]
+position = Vector2(959, 104)
+
+[node name="Audio_Russia" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(127040, -531)
+scale = Vector2(1.06151, 1.18884)
+stream = ExtResource("45_gsxbu")
+volume_db = 5.0
+max_distance = 8000.0
+
+[node name="Marker_L" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(6000, 158)
+
+[node name="Marker_T" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(6328, -59)
+
+[node name="Marker_R" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(118000, 176)
+
+[node name="Marker_B" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(6149, 426)
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="UI" parent="UI" instance=ExtResource("18_eh26u")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -41.0
+offset_right = 22.0
+offset_bottom = -41.0
+
+[node name="Voice_Durov" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("47_ogad5")
+volume_db = -5.0
+
+[node name="Music_1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("47_eclma")
+volume_db = -20.0
+
+[node name="Music_2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("48_h45a2")
+volume_db = -20.0
+
+[node name="Music_3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("49_c1v3s")
+volume_db = -20.0
+
+[node name="Music_4" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("50_brh81")
+volume_db = -20.0
+
+[node name="Music_5" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("51_8vdd3")
+volume_db = -20.0
+
+[node name="Move_setting" type="Node2D" parent="."]
+position = Vector2(-559, 491)
+scale = Vector2(2, 2)
+
+[node name="ArrowDown" type="Sprite2D" parent="Move_setting"]
+position = Vector2(627, -1000)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("46_4cf8k")
+
+[node name="ArrowLeft" type="Sprite2D" parent="Move_setting"]
+position = Vector2(500, -1000)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("47_gfbc6")
+
+[node name="ArrowRight" type="Sprite2D" parent="Move_setting"]
+position = Vector2(754, -1000)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("48_j2nt4")
+
+[node name="ArrowUp" type="Sprite2D" parent="Move_setting"]
+position = Vector2(627, -1120)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("49_yfxjo")
+
+[node name="Space" type="Sprite2D" parent="Move_setting"]
+position = Vector2(629, -853)
+scale = Vector2(6, 1.5)
+texture = ExtResource("50_c3lma")
+
+[node name="ColorRect" type="ColorRect" parent="Move_setting/Space"]
+offset_left = -29.0
+offset_top = -10.0
+offset_right = 31.0
+offset_bottom = 13.0
+color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="Start_text" type="Label" parent="Move_setting/Space"]
+offset_left = -13.8334
+offset_top = -22.0
+offset_right = 1434.16
+offset_bottom = 74.0
+scale = Vector2(0.3, 1)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "SPACE"
+
+[node name="Label_move" type="Label" parent="Move_setting/Space"]
+offset_left = 50.8333
+offset_top = -162.667
+offset_right = 1498.83
+offset_bottom = -66.6667
+scale = Vector2(0.3, 1)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("33_y1ter")
+theme_override_font_sizes/font_size = 45
+text = "- Движение"
+
+[node name="Label_stop" type="Label" parent="Move_setting/Space"]
+offset_left = 51.6666
+offset_top = -31.0
+offset_right = 1499.66
+offset_bottom = 65.0
+scale = Vector2(0.3, 1)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("33_y1ter")
+theme_override_font_sizes/font_size = 45
+text = "- Тормоз"
+
+[connection signal="body_entered" from="Area_start" to="." method="_on_area_start_body_entered"]
+[connection signal="body_entered" from="Area_finish" to="." method="_on_area_finish_body_entered"]

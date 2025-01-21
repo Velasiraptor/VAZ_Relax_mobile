@@ -1,0 +1,615 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn4ac4xxm1x1x"]
+
+[ext_resource type="Texture2D" uid="uid://dcvkk5m7u238c" path="res://Sprites/Roads/asphalt.png" id="1_b2d3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg6ti"]
+size = Vector2(129504, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vjqm"]
+size = Vector2(1455.88, 238.875)
+
+[node name="Location_asphalt" type="StaticBody2D"]
+modulate = Color(0.241156, 0.241156, 0.241156, 1)
+visibility_layer = 2
+collision_mask = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Asphalt" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt2" type="Sprite2D" parent="Node2D"]
+position = Vector2(2023, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt3" type="Sprite2D" parent="Node2D"]
+position = Vector2(4046, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt4" type="Sprite2D" parent="Node2D"]
+position = Vector2(6069, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt5" type="Sprite2D" parent="Node2D"]
+position = Vector2(8093, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt6" type="Sprite2D" parent="Node2D"]
+position = Vector2(10116, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt7" type="Sprite2D" parent="Node2D"]
+position = Vector2(12139, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt8" type="Sprite2D" parent="Node2D"]
+position = Vector2(14162, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt9" type="Sprite2D" parent="Node2D"]
+position = Vector2(16184, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt10" type="Sprite2D" parent="Node2D"]
+position = Vector2(18207, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt11" type="Sprite2D" parent="Node2D"]
+position = Vector2(20230, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt12" type="Sprite2D" parent="Node2D"]
+position = Vector2(22253, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt13" type="Sprite2D" parent="Node2D"]
+position = Vector2(24277, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt14" type="Sprite2D" parent="Node2D"]
+position = Vector2(26300, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt15" type="Sprite2D" parent="Node2D"]
+position = Vector2(28323, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt16" type="Sprite2D" parent="Node2D"]
+position = Vector2(30346, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt17" type="Sprite2D" parent="Node2D"]
+position = Vector2(32370, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt18" type="Sprite2D" parent="Node2D"]
+position = Vector2(34393, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt19" type="Sprite2D" parent="Node2D"]
+position = Vector2(36416, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt20" type="Sprite2D" parent="Node2D"]
+position = Vector2(38439, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt21" type="Sprite2D" parent="Node2D"]
+position = Vector2(40463, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt22" type="Sprite2D" parent="Node2D"]
+position = Vector2(42486, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt23" type="Sprite2D" parent="Node2D"]
+position = Vector2(44509, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt24" type="Sprite2D" parent="Node2D"]
+position = Vector2(46532, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt25" type="Sprite2D" parent="Node2D"]
+position = Vector2(48554, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt26" type="Sprite2D" parent="Node2D"]
+position = Vector2(50577, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt27" type="Sprite2D" parent="Node2D"]
+position = Vector2(52600, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt28" type="Sprite2D" parent="Node2D"]
+position = Vector2(54623, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt29" type="Sprite2D" parent="Node2D"]
+position = Vector2(56647, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt30" type="Sprite2D" parent="Node2D"]
+position = Vector2(58670, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt31" type="Sprite2D" parent="Node2D"]
+position = Vector2(60693, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt32" type="Sprite2D" parent="Node2D"]
+position = Vector2(62716, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt33" type="Sprite2D" parent="Node2D"]
+position = Vector2(64740, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt34" type="Sprite2D" parent="Node2D"]
+position = Vector2(66763, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt35" type="Sprite2D" parent="Node2D"]
+position = Vector2(68786, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt36" type="Sprite2D" parent="Node2D"]
+position = Vector2(70809, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt37" type="Sprite2D" parent="Node2D"]
+position = Vector2(72833, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt38" type="Sprite2D" parent="Node2D"]
+position = Vector2(74856, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt39" type="Sprite2D" parent="Node2D"]
+position = Vector2(76879, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt40" type="Sprite2D" parent="Node2D"]
+position = Vector2(78902, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt41" type="Sprite2D" parent="Node2D"]
+position = Vector2(80924, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt42" type="Sprite2D" parent="Node2D"]
+position = Vector2(82947, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt43" type="Sprite2D" parent="Node2D"]
+position = Vector2(84970, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt44" type="Sprite2D" parent="Node2D"]
+position = Vector2(86993, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt45" type="Sprite2D" parent="Node2D"]
+position = Vector2(89017, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt46" type="Sprite2D" parent="Node2D"]
+position = Vector2(91040, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt47" type="Sprite2D" parent="Node2D"]
+position = Vector2(93063, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt48" type="Sprite2D" parent="Node2D"]
+position = Vector2(95086, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt49" type="Sprite2D" parent="Node2D"]
+position = Vector2(97110, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt50" type="Sprite2D" parent="Node2D"]
+position = Vector2(99133, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt51" type="Sprite2D" parent="Node2D"]
+position = Vector2(101156, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt52" type="Sprite2D" parent="Node2D"]
+position = Vector2(103179, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt53" type="Sprite2D" parent="Node2D"]
+position = Vector2(105203, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt54" type="Sprite2D" parent="Node2D"]
+position = Vector2(107226, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt55" type="Sprite2D" parent="Node2D"]
+position = Vector2(109249, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt56" type="Sprite2D" parent="Node2D"]
+position = Vector2(111272, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt57" type="Sprite2D" parent="Node2D"]
+position = Vector2(113294, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt58" type="Sprite2D" parent="Node2D"]
+position = Vector2(115317, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt59" type="Sprite2D" parent="Node2D"]
+position = Vector2(117340, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt60" type="Sprite2D" parent="Node2D"]
+position = Vector2(119363, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt61" type="Sprite2D" parent="Node2D"]
+position = Vector2(121387, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt62" type="Sprite2D" parent="Node2D"]
+position = Vector2(123410, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt63" type="Sprite2D" parent="Node2D"]
+position = Vector2(125433, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt64" type="Sprite2D" parent="Node2D"]
+position = Vector2(127456, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Road" type="Node2D" parent="."]
+position = Vector2(0, -172)
+
+[node name="Asphalt" type="Sprite2D" parent="Road"]
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt2" type="Sprite2D" parent="Road"]
+position = Vector2(2023, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt3" type="Sprite2D" parent="Road"]
+position = Vector2(4046, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt4" type="Sprite2D" parent="Road"]
+position = Vector2(6069, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt5" type="Sprite2D" parent="Road"]
+position = Vector2(8093, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt6" type="Sprite2D" parent="Road"]
+position = Vector2(10116, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt7" type="Sprite2D" parent="Road"]
+position = Vector2(12139, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt8" type="Sprite2D" parent="Road"]
+position = Vector2(14162, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt9" type="Sprite2D" parent="Road"]
+position = Vector2(16184, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt10" type="Sprite2D" parent="Road"]
+position = Vector2(18207, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt11" type="Sprite2D" parent="Road"]
+position = Vector2(20230, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt12" type="Sprite2D" parent="Road"]
+position = Vector2(22253, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt13" type="Sprite2D" parent="Road"]
+position = Vector2(24277, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt14" type="Sprite2D" parent="Road"]
+position = Vector2(26300, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt15" type="Sprite2D" parent="Road"]
+position = Vector2(28323, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt16" type="Sprite2D" parent="Road"]
+position = Vector2(30346, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt17" type="Sprite2D" parent="Road"]
+position = Vector2(32370, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt18" type="Sprite2D" parent="Road"]
+position = Vector2(34393, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt19" type="Sprite2D" parent="Road"]
+position = Vector2(36416, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt20" type="Sprite2D" parent="Road"]
+position = Vector2(38439, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt21" type="Sprite2D" parent="Road"]
+position = Vector2(40463, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt22" type="Sprite2D" parent="Road"]
+position = Vector2(42486, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt23" type="Sprite2D" parent="Road"]
+position = Vector2(44509, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt24" type="Sprite2D" parent="Road"]
+position = Vector2(46532, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt25" type="Sprite2D" parent="Road"]
+position = Vector2(48554, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt26" type="Sprite2D" parent="Road"]
+position = Vector2(50577, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt27" type="Sprite2D" parent="Road"]
+position = Vector2(52600, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt28" type="Sprite2D" parent="Road"]
+position = Vector2(54623, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt29" type="Sprite2D" parent="Road"]
+position = Vector2(56647, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt30" type="Sprite2D" parent="Road"]
+position = Vector2(58670, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt31" type="Sprite2D" parent="Road"]
+position = Vector2(60693, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt32" type="Sprite2D" parent="Road"]
+position = Vector2(62716, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt33" type="Sprite2D" parent="Road"]
+position = Vector2(64740, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt34" type="Sprite2D" parent="Road"]
+position = Vector2(66763, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt35" type="Sprite2D" parent="Road"]
+position = Vector2(68786, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt36" type="Sprite2D" parent="Road"]
+position = Vector2(70809, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt37" type="Sprite2D" parent="Road"]
+position = Vector2(72833, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt38" type="Sprite2D" parent="Road"]
+position = Vector2(74856, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt39" type="Sprite2D" parent="Road"]
+position = Vector2(76879, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt40" type="Sprite2D" parent="Road"]
+position = Vector2(78902, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt41" type="Sprite2D" parent="Road"]
+position = Vector2(80924, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt42" type="Sprite2D" parent="Road"]
+position = Vector2(82947, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt43" type="Sprite2D" parent="Road"]
+position = Vector2(84970, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt44" type="Sprite2D" parent="Road"]
+position = Vector2(86993, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt45" type="Sprite2D" parent="Road"]
+position = Vector2(89017, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt46" type="Sprite2D" parent="Road"]
+position = Vector2(91040, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt47" type="Sprite2D" parent="Road"]
+position = Vector2(93063, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt48" type="Sprite2D" parent="Road"]
+position = Vector2(95086, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt49" type="Sprite2D" parent="Road"]
+position = Vector2(97110, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt50" type="Sprite2D" parent="Road"]
+position = Vector2(99133, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt51" type="Sprite2D" parent="Road"]
+position = Vector2(101156, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt52" type="Sprite2D" parent="Road"]
+position = Vector2(103179, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt53" type="Sprite2D" parent="Road"]
+position = Vector2(105203, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt54" type="Sprite2D" parent="Road"]
+position = Vector2(107226, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt55" type="Sprite2D" parent="Road"]
+position = Vector2(109249, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt56" type="Sprite2D" parent="Road"]
+position = Vector2(111272, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt57" type="Sprite2D" parent="Road"]
+position = Vector2(113294, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt58" type="Sprite2D" parent="Road"]
+position = Vector2(115317, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt59" type="Sprite2D" parent="Road"]
+position = Vector2(117340, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt60" type="Sprite2D" parent="Road"]
+position = Vector2(119363, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt61" type="Sprite2D" parent="Road"]
+position = Vector2(121387, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt62" type="Sprite2D" parent="Road"]
+position = Vector2(123410, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="Asphalt63" type="Sprite2D" parent="Road"]
+position = Vector2(125433, 0)
+texture = ExtResource("1_b2d3q")
+
+[node name="Asphalt64" type="Sprite2D" parent="Road"]
+position = Vector2(127456, 0)
+texture = ExtResource("1_b2d3q")
+flip_h = true
+
+[node name="CollisionShape2D_T" type="CollisionShape2D" parent="."]
+position = Vector2(63681, -127.25)
+shape = SubResource("RectangleShape2D_eg6ti")
+debug_color = Color(0.878431, 0.87451, 1, 0.580392)
+
+[node name="CollisionShape2D2_L" type="CollisionShape2D" parent="."]
+position = Vector2(-67.0004, -141.875)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3vjqm")
+debug_color = Color(0.878431, 0.87451, 1, 0.580392)
+
+[node name="CollisionShape2D2_R" type="CollisionShape2D" parent="."]
+position = Vector2(125100, -263)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3vjqm")
+debug_color = Color(0.878431, 0.87451, 1, 0.580392)
+
+[node name="CollisionShape2D2_B" type="CollisionShape2D" parent="."]
+position = Vector2(63681, 456)
+shape = SubResource("RectangleShape2D_eg6ti")
+debug_color = Color(0.878431, 0.87451, 1, 0.580392)

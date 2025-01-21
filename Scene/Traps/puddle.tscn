@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dosibahvigfmr"]
+
+[ext_resource type="Script" path="res://Scene/Traps/puddle.gd" id="1_j33ti"]
+[ext_resource type="Texture2D" uid="uid://8tehnu4o0jv1" path="res://Sprites/Items/Traps/puddle.png" id="1_ut8bd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ds4bh"]
+radius = 270.254
+
+[node name="puddle" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_j33ti")
+
+[node name="Puddle_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.239216, 0.117647, 0.0588235, 1)
+scale = Vector2(0.6, 1.6)
+texture = ExtResource("1_ut8bd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ds4bh")
+debug_color = Color(0.662745, 0.498039, 0.34902, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

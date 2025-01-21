@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://8og22bctdqct"]
+
+[ext_resource type="Texture2D" uid="uid://draufpem1wy1" path="res://Sprites/UI/UI_move_setting/Mobile_button.png" id="1_apwbd"]
+[ext_resource type="Script" path="res://Scene/UI/pc_or_mobile.gd" id="1_cx2rh"]
+[ext_resource type="FontFile" uid="uid://c3bko54iadpdh" path="res://Font_Russia.ttf" id="2_8trdl"]
+[ext_resource type="Texture2D" uid="uid://d21wwa41u03yu" path="res://Sprites/UI/UI_move_setting/Mobile_button_hover.png" id="2_38kyy"]
+[ext_resource type="Texture2D" uid="uid://dmts38u1ed8be" path="res://Sprites/UI/UI_move_setting/PC_button.png" id="3_21v7m"]
+[ext_resource type="Texture2D" uid="uid://dvbgkf1vm3l6r" path="res://Sprites/UI/UI_move_setting/PC_button_hover.png" id="4_3j3aj"]
+
+[node name="PC_or_Mobile" type="Control" groups=["Language"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cx2rh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0470588, 0.00784314, 0.905882)
+
+[node name="Label_move" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -408.0
+offset_right = 455.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8trdl")
+theme_override_font_sizes/font_size = 70
+text = "Выберите способ управления"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -585.0
+offset_top = -135.0
+offset_right = 585.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="TextureButton" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_apwbd")
+texture_hover = ExtResource("2_38kyy")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+
+[node name="Mobile" type="TextureButton" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_21v7m")
+texture_hover = ExtResource("4_3j3aj")
+
+[node name="Label_mobile" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -744.5
+offset_top = 317.0
+offset_right = 35.5
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8trdl")
+theme_override_font_sizes/font_size = 60
+text = "Телефон"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_pc" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 317.0
+offset_right = 744.5
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8trdl")
+theme_override_font_sizes/font_size = 60
+text = "Компьютер"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/PC" to="." method="_on_pc_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/Mobile" to="." method="_on_mobile_pressed"]

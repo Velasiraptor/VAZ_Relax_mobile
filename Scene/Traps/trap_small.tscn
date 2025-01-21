@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://3ft5eredqhwd"]
+
+[ext_resource type="Texture2D" uid="uid://dymmp43huy5ke" path="res://Sprites/Items/hole_1.png" id="1_n8xjn"]
+[ext_resource type="Script" path="res://Scene/Traps/trap_small.gd" id="1_nwrja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yqt"]
+size = Vector2(296, 79)
+
+[node name="Trap_small" type="Area2D"]
+modulate = Color(0.188235, 0.188235, 0.188235, 1)
+scale = Vector2(1.3, 1.3)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_nwrja")
+
+[node name="Hole1" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_n8xjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_e4yqt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

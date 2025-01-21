@@ -1,0 +1,634 @@
+[gd_scene load_steps=19 format=3 uid="uid://divrjcvikptcy"]
+
+[ext_resource type="Script" path="res://Scene/UI/ui.gd" id="1_rnyg7"]
+[ext_resource type="Texture2D" uid="uid://c1bgu6itsfgll" path="res://Sprites/Items/Traps/dirt.png" id="2_7x0p7"]
+[ext_resource type="Texture2D" uid="uid://c5gsofeh1g63p" path="res://Sprites/Items/Traps/car_wiper.png" id="3_op3om"]
+[ext_resource type="AudioStream" uid="uid://lgtpwx4qmh1v" path="res://Sounds/Avto_dvornik.mp3" id="4_s04bd"]
+[ext_resource type="AudioStream" uid="uid://c7yl70bacrwfc" path="res://Sounds/vsplesk.mp3" id="5_e6pdj"]
+[ext_resource type="Texture2D" uid="uid://fhe0jv0tut6x" path="res://Sprites/UI/sound_icon_on.png" id="6_g5v43"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://Sprites/key/arrow_left.png" id="7_jmudf"]
+[ext_resource type="Texture2D" uid="uid://d04bqc5v3befo" path="res://Sprites/key/arrow_up.png" id="7_wwtvn"]
+[ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://Sprites/key/arrow_down.png" id="9_cl8af"]
+[ext_resource type="Texture2D" uid="uid://bffhnjlg8n3wm" path="res://Sprites/UI/button_exit.png" id="11_1jyf7"]
+[ext_resource type="Texture2D" uid="uid://bobudefslijtj" path="res://Sprites/UI/button_exit_hover.png" id="11_lhimt"]
+[ext_resource type="FontFile" uid="uid://c3bko54iadpdh" path="res://Font_Russia.ttf" id="12_u4or6"]
+[ext_resource type="Texture2D" uid="uid://da0efdlkf2axa" path="res://Sprites/UI/sound_icon_on_hover.png" id="13_hsyi4"]
+[ext_resource type="PackedScene" uid="uid://cgs3ocsniws7t" path="res://igbgui.tscn" id="14_pevvw"]
+
+[sub_resource type="Animation" id="Animation_yn76a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%dirt_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.368627)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%dirt_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.368627)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%dirt_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.368627)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CarWiper_L:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-437.03, 641.695)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CarWiper_L:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.506145]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CarWiper_R:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(513.97, 655.694)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CarWiper_R:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523599]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("dvornik:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("vsplesk:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rnp3l"]
+resource_name = "dirt_false"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%dirt_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%dirt_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%dirt_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f5osi"]
+resource_name = "dirt_true"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dirt_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.509804), Color(0.219608, 0.145098, 0.0509804, 0.509804), Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%dirt_1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.509804), Color(0.219608, 0.145098, 0.0509804, 0.509804), Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%dirt_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.219608, 0.145098, 0.0509804, 0.509804), Color(0.219608, 0.145098, 0.0509804, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CarWiper_L:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-437.03, 641.695), Vector2(-561, 262), Vector2(-938, 83), Vector2(-561, 262), Vector2(-437.03, 641.695), Vector2(-561, 262), Vector2(-938, 83), Vector2(-561, 262), Vector2(-437.03, 641.695)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CarWiper_L:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.506145, -0.181442, -0.908147, -0.181442, 0.506145, -0.181442, -0.908147, -0.181442, 0.506145]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CarWiper_R:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(513.97, 655.694), Vector2(386, 289), Vector2(26, 87), Vector2(386, 289), Vector2(513.97, 655.694), Vector2(386, 289), Vector2(26, 87), Vector2(386, 289), Vector2(513.97, 655.694)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CarWiper_R:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.523599, -0.164061, -0.890118, -0.164061, 0.523599, -0.164061, -0.890118, -0.164061, 0.523599]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("dvornik:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("vsplesk:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ey4du"]
+_data = {
+"RESET": SubResource("Animation_yn76a"),
+"dirt_false": SubResource("Animation_rnp3l"),
+"dirt_true": SubResource("Animation_f5osi")
+}
+
+[node name="UI" type="Control" groups=["Language", "UI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rnyg7")
+
+[node name="Trap_dirt" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dirt_1" type="TextureRect" parent="Trap_dirt"]
+unique_name_in_owner = true
+modulate = Color(0.219608, 0.145098, 0.0509804, 0.368627)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1217.0
+offset_top = -658.0
+offset_right = 1180.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7x0p7")
+
+[node name="dirt_2" type="TextureRect" parent="Trap_dirt"]
+unique_name_in_owner = true
+modulate = Color(0.219608, 0.145098, 0.0509804, 0.368627)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1217.0
+offset_top = -658.0
+offset_right = 1180.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7x0p7")
+
+[node name="dirt_3" type="TextureRect" parent="Trap_dirt"]
+unique_name_in_owner = true
+modulate = Color(0.219608, 0.145098, 0.0509804, 0.368627)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1217.0
+offset_top = -658.0
+offset_right = 1180.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7x0p7")
+
+[node name="CarWiper_L" type="Sprite2D" parent="Trap_dirt"]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+position = Vector2(-437.03, 641.695)
+rotation = 0.506145
+texture = ExtResource("3_op3om")
+flip_h = true
+
+[node name="CarWiper_R" type="Sprite2D" parent="Trap_dirt"]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+position = Vector2(513.97, 655.694)
+rotation = 0.523599
+texture = ExtResource("3_op3om")
+flip_h = true
+
+[node name="Animation_dirt" type="AnimationPlayer" parent="Trap_dirt"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_ey4du")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Trap_dirt"]
+visible = false
+layout_mode = 0
+offset_left = -1033.0
+offset_top = 639.0
+offset_right = -993.0
+offset_bottom = 679.0
+
+[node name="ColorRect2" type="ColorRect" parent="Trap_dirt"]
+visible = false
+layout_mode = 0
+offset_left = -84.0
+offset_top = 643.0
+offset_right = -44.0
+offset_bottom = 683.0
+
+[node name="dvornik" type="AudioStreamPlayer" parent="Trap_dirt"]
+stream = ExtResource("4_s04bd")
+
+[node name="vsplesk" type="AudioStreamPlayer" parent="Trap_dirt"]
+stream = ExtResource("5_e6pdj")
+volume_db = -5.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = -915.0
+offset_top = -428.0
+offset_right = -375.0
+offset_bottom = 112.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("11_1jyf7")
+texture_hover = ExtResource("11_lhimt")
+
+[node name="Control_move_mobile" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchScreenButton_L" type="TouchScreenButton" parent="Control_move_mobile"]
+modulate = Color(1, 1, 1, 0.211765)
+position = Vector2(-901, 266)
+scale = Vector2(3.5, 2.7)
+texture_normal = ExtResource("7_jmudf")
+action = "ui_left"
+
+[node name="TouchScreenButton_R" type="TouchScreenButton" parent="Control_move_mobile"]
+modulate = Color(1, 1, 1, 0.211765)
+position = Vector2(-195, 266)
+scale = Vector2(-3.5, 2.7)
+texture_normal = ExtResource("7_jmudf")
+action = "ui_right"
+
+[node name="TouchScreenButton_T" type="TouchScreenButton" parent="Control_move_mobile"]
+modulate = Color(1, 1, 1, 0.211765)
+position = Vector2(512, 45)
+scale = Vector2(3.5, 2.5)
+texture_normal = ExtResource("7_wwtvn")
+action = "ui_up"
+
+[node name="TouchScreenButton_D" type="TouchScreenButton" parent="Control_move_mobile"]
+modulate = Color(1, 1, 1, 0.211765)
+position = Vector2(512, 299)
+scale = Vector2(3.5, 2.5)
+texture_normal = ExtResource("9_cl8af")
+action = "ui_down"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control_move_mobile"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1874, -163)
+scale = Vector2(36.84, 1.88)
+texture_normal = ExtResource("9_cl8af")
+action = "ui_accept"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control_move_mobile/TouchScreenButton"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(20.0869, 65.7258)
+scale = Vector2(0.383822, 0.947581)
+texture_normal = ExtResource("9_cl8af")
+action = "ui_accept"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control_move_mobile/TouchScreenButton"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(15.6895, 60.6383)
+scale = Vector2(0.383822, 1.55851)
+texture_normal = ExtResource("9_cl8af")
+action = "ui_accept"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control_move_mobile/TouchScreenButton"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(47.2041, 54.7872)
+scale = Vector2(0.166395, 3.06915)
+texture_normal = ExtResource("9_cl8af")
+action = "ui_accept"
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect_background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1057.0
+offset_top = -608.0
+offset_right = 1125.0
+offset_bottom = 677.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.356863, 0.356863, 0.356863, 0.270588)
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.5
+offset_top = -223.5
+offset_right = 354.5
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.12549, 0.12549, 0.466667)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -940.0
+offset_top = -520.0
+offset_right = -900.0
+offset_bottom = -497.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Record_str" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 40
+text = "Рекорд:"
+
+[node name="Record_number" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 40
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+
+[node name="Result_str" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 40
+text = "Результат:"
+
+[node name="Result_number" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 40
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Reset" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 60
+text = "ПЕРЕЗАПУСК"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 60
+text = "ВЫХОД"
+
+[node name="Text_result" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -217.0
+offset_top = -457.0
+offset_right = 323.0
+offset_bottom = -402.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 45
+text = "Результат:"
+
+[node name="Result" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 7.0
+offset_top = -457.0
+offset_right = 547.0
+offset_bottom = -402.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("12_u4or6")
+theme_override_font_sizes/font_size = 45
+text = "-"
+
+[node name="MusicButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 735.0
+offset_top = -420.0
+offset_right = 1275.0
+offset_bottom = 92.0
+grow_horizontal = 0
+scale = Vector2(0.3, 0.3)
+focus_mode = 0
+texture_normal = ExtResource("6_g5v43")
+texture_hover = ExtResource("13_hsyi4")
+
+[node name="igbgui" parent="." instance=ExtResource("14_pevvw")]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MusicButton" to="." method="_on_music_button_pressed"]

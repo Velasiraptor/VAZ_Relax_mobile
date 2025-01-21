@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjnxjl632cf4k"]
+
+[ext_resource type="Texture2D" uid="uid://bdi6rx2i6xep3" path="res://Sprites/Items/Traps/speed_bump.png" id="1_neu7q"]
+[ext_resource type="Script" path="res://Scene/Traps/speed_bump.gd" id="1_xlbbi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg24f"]
+size = Vector2(581.642, 52.4874)
+
+[node name="Speed_bump" type="Area2D"]
+rotation = 0.255208
+collision_layer = 36
+collision_mask = 26
+script = ExtResource("1_xlbbi")
+
+[node name="SpeedBump" type="Sprite2D" parent="."]
+modulate = Color(0.423651, 0.423651, 0.423651, 1)
+position = Vector2(8.83564, 33.8664)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_neu7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.50718, 24.3368)
+rotation = 0.810582
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_jg24f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

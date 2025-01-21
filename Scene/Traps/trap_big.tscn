@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkt7vx467aphm"]
+
+[ext_resource type="Script" path="res://Scene/Traps/trap_big.gd" id="1_5jadk"]
+[ext_resource type="Texture2D" uid="uid://dtiqj7l1p3oei" path="res://Sprites/Items/hole_2_big.png" id="1_u7gh0"]
+[ext_resource type="Texture2D" uid="uid://nnebree1bw2h" path="res://Sprites/Items/emergency_sign.png" id="2_ompj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ktsy"]
+size = Vector2(186, 236)
+
+[sub_resource type="Animation" id="Animation_fj526"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EmergencySign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-244, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EmergencySign:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_blxh0"]
+resource_name = "Sign"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EmergencySign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-244, 17), Vector2(290, 201)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EmergencySign:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.9911]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uheyu"]
+_data = {
+"RESET": SubResource("Animation_fj526"),
+"Sign": SubResource("Animation_blxh0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oauc"]
+size = Vector2(86, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkgo"]
+size = Vector2(574, 872)
+
+[node name="trap_big" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5jadk")
+
+[node name="Hole2Big" type="Sprite2D" parent="."]
+modulate = Color(0.380392, 0.380392, 0.380392, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u7gh0")
+
+[node name="EmergencySign" type="Sprite2D" parent="."]
+modulate = Color(0.380392, 0.380392, 0.380392, 1)
+position = Vector2(-244, 17)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ompj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 41)
+shape = SubResource("RectangleShape2D_8ktsy")
+debug_color = Color(0.811765, 0.388235, 0.352941, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uheyu")
+}
+
+[node name="Area_sign" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_sign"]
+position = Vector2(-243, 17)
+shape = SubResource("RectangleShape2D_8oauc")
+debug_color = Color(0.64562, 0.508879, 0.330622, 0.42)
+
+[node name="Area_light" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_light"]
+position = Vector2(-1752, 28)
+shape = SubResource("RectangleShape2D_8xkgo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area_sign" to="." method="_on_area_sign_body_entered"]
+[connection signal="body_entered" from="Area_light" to="." method="_on_area_light_body_entered"]
+[connection signal="body_exited" from="Area_light" to="." method="_on_area_light_body_exited"]

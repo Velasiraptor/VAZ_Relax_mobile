@@ -1,0 +1,557 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgs3ocsniws7t"]
+
+[sub_resource type="GDScript" id="GDScript_by2q4"]
+resource_name = "igbgui"
+script/source = "extends Node
+#Instant Games Bridge JS Core by Mewton Games, GUI Plugin by Repin Publishing v4.0
+#Добавьте данную сцену как дочернюю там где вам необходим функционал IGB.
+#Отключение звука при сворачивании, показе interstitial и rewarded происходит автоматически.
+#platform
+@export_group(\"Messages\")
+@export var game_ready = false #поставте галочу, чтобы отправить сигнал ready в нужной сцене
+@export var in_game_loading_started = false:
+	set(in_game_loading_started):
+			if in_game_loading_started and !native:
+				set_in_game_loading_started()
+@export var in_game_loading_stopped = false:
+	set(in_game_loading_stopped):
+			if in_game_loading_stopped and !native:
+				set_in_game_loading_stopped()
+@export var gameplay_started = false:
+	set(gameplay_started):
+			if gameplay_started and !native:
+				set_gameplay_started()
+@export var gameplay_stopped = false:
+	set(gameplay_stopped):
+			if gameplay_stopped and !native:
+				set_gameplay_stopped()
+@export var player_got_achievement = false:
+	set(player_got_achievement):
+			if player_got_achievement and !native:
+				set_player_got_achievement()
+var platform: String #тип платформы
+var native = false
+var language: String #язык платормы
+var payload: String #получение значения из адресной строки
+var tld: String #получение текущего домена
+#device
+@warning_ignore(\"unused_signal\")
+signal app_visible #сигнал при возвращении видимости игры после сворачивания
+@warning_ignore(\"unused_signal\")
+signal app_hidden #сигнал при сворачивании игры
+var app_state_callback = JavaScriptBridge.create_callback(get_visibility_state)
+var device: String #тип устройства
+#advertisement
+@export_group(\"Advertisement\")
+@export var show_banner = false: #показать баннер
+	set(show_banner):
+		if show_banner and !native:
+			on_show_banner()
+var banner_callback = JavaScriptBridge.create_callback(get_banner_state)
+@export var show_interstitial = false: #поставьте галочу для показа interstitial, либо вызывайте ее при помощи AnimationPlayer
+	set(show_interstitial):
+		if show_interstitial and !native:
+			on_show_interstitial()
+var interstitial_callback = JavaScriptBridge.create_callback(get_interstitial_state)
+@export var show_rewarded = false: #поставьте галочу для показа rewarded, либо вызывайте ее при помощи AnimationPlayer
+	set(show_rewarded):
+		if show_rewarded and !native:
+			on_show_rewarded()
+var rewarded_callback = JavaScriptBridge.create_callback(get_rewarded_state)
+@warning_ignore(\"unused_signal\")
+signal get_reward #используйте сигнал \"get_reward\" для получения награды
+@warning_ignore(\"unused_signal\")
+signal ad_open #сигнал при открытии interstitial и rewarded рекламы.
+@warning_ignore(\"unused_signal\")
+signal ad_close #сигнал при закрытии interstitial и rewarded рекламы.
+#player
+@export_group(\"Player\")
+var authorized: bool
+@export var player_authorize = false: #открытие окна авторизации
+	set(player_authorize):
+		if player_authorize and !native:
+			on_player_authorize()
+#social
+@export_group(\"Social\")
+@export var share_app = false: #поставте галочу в сцене, где необходимо поделится приложением vk.
+	set(share_app):
+		if share_app and !native:
+			on_share_app()
+@export var game_link: String #ссылка на игру, пример: https://vk.com/app123
+@export var join_community = false: #приглашение в сообщество vk или ok
+	set(join_community):
+		if join_community and !native:
+			on_join_community()
+@export var vk_community_id: String #id вашего сообщества vk, состоит только из цифр, пример: 123
+@export var ok_community_id: String #id вашего сообщества ok, состоит только из цифр, пример: 123
+@export var vk_donut_check = false: #включение проверки подписки на сообщество vk donut через переменную vk_donut_subscriber, так же требуется указать community_id
+	set(vk_donut_check):
+		if vk_donut_check and !native:
+			on_vk_donut_check()
+var vk_donut_subscriber = false #проверка подписки на ваше сообщество через vk donut, true - когда есть подписка и false при ее отсутствии.
+@export var invite_friends = false: #пригласить друга из vk или ok
+	set(invite_friends):
+		if invite_friends and !native:
+			on_invite_friends()
+@export var invite_text_ok: String #текст приглашения на ok
+@export var create_post = false: #сделать пост на стене vk или ok
+	set(create_post):
+		if create_post and !native:
+			on_create_post()
+@export var post_message: String #текст вашего поста
+@export var post_attachments: String #ссылка или номер вложения к посту, например: photo-123 or video-123 etc.
+@export var add_to_favorites = false: #добавить в избранное vk
+	set(add_to_favorites):
+		if add_to_favorites and !native:
+			on_add_to_favorites()
+@export var open_catalog = false: #открыть каталог игр в yandex
+	set(open_catalog):
+		if open_catalog and !native:
+			on_open_catalog()
+@export var catalog_link: String #ссылка на страницу разработчика, пример: /games/developer?name= Не работает на iOS!
+#leaderboard
+@export_group(\"Leaderboard\")
+@export var yandex_leaderboard = false: #активация записи доски лидеров yandex
+	set(yandex_leaderboard):
+		if yandex_leaderboard and !native:
+			on_yandex_leaderboard()
+@export var read_yandex_leaderboard = false: #активация чтения доски лидеров yandex
+	set(read_yandex_leaderboard):
+		if read_yandex_leaderboard and !native:
+			on_read_yandex_leaderboard()
+@export var yandex_leaderboard_get_entries = false: #активация загрузки таблицы лидеров yandex
+	set(yandex_leaderboard_get_entries):
+		if yandex_leaderboard_get_entries and !native:
+			on_yandex_leaderboard_get_entries()
+@export var yandex_result: int #результат который отобразится на странице игры в yandex играх
+@export var yandex_leaderboard_name: String #техническое название лидерборда в который будет осуществляться запись
+var yandex_leaderboard_entries = []
+@export var yandex_leaderboard_entries_include : bool
+@export var yandex_leaderboard_entries_around : int
+@export var yandex_leaderboard_entries_top : int
+@warning_ignore(\"unused_signal\")
+signal yandex_leaderboard_entries_loaded #сигнал о загрузке таблици доски лидеров yandex
+#storage
+@export_group(\"Storage\")
+var data_key: Array[String] #выберете String для создания названия ключа
+var data_key_string: String
+var data_value: Array[String] #выберете любое значение для вашего ключа. ВНИМАНИЕ! Размер массива \"data_key\", должен совпадать с размером \"data_value\"
+var data_value_string: String
+@export var data: Dictionary
+@warning_ignore(\"unused_signal\")
+signal data_loaded #сигнал от загрузке данных
+@export var save_data = false: #сохранение значений
+	set(save_data):
+		if save_data and !native:
+			on_save_data()
+@export var load_data = false: #загрузка значений
+	set(load_data):
+		if load_data and !native:
+			on_load_data()
+@export var delete_data = false: #удаление значений
+	set(delete_data):
+		if delete_data and !native:
+			on_delete_data()
+			
+func _enter_tree() -> void:
+	if OS.get_name() == \"Web\":
+		if JavaScriptBridge.get_interface(\"bridge\") == null:
+			print(\"No JS SDK\")
+			native = true
+
+func _ready() -> void:
+	if OS.get_name() == \"Web\":
+		if !native:
+			JavaScriptBridge.get_interface(\"bridge\").game.on('visibility_state_changed', app_state_callback)
+			JavaScriptBridge.get_interface(\"bridge\").advertisement.on('banner_state_changed', banner_callback)
+			JavaScriptBridge.get_interface(\"bridge\").advertisement.on('interstitial_state_changed', interstitial_callback)
+			JavaScriptBridge.get_interface(\"bridge\").advertisement.on('rewarded_state_changed', rewarded_callback)
+			if game_ready:
+				set_game_ready()
+			get_platform()
+			get_device()
+			get_language()
+			get_is_authorized()
+			TranslationServer.set_locale(language)
+	else:
+		native = true
+#выключение звука при потере фокуса мыши
+func _notification(what:int) -> void:
+	match what:
+		Window.NOTIFICATION_WM_MOUSE_ENTER:
+			if OS.get_name() == \"Web\":
+				AudioServer.set_bus_volume_db(0,0)
+			print(\"mouse in\")
+		Window.NOTIFICATION_WM_MOUSE_EXIT:
+			if OS.get_name() == \"Web\":
+				AudioServer.set_bus_volume_db(0,-80)
+			print(\"mouse out\")
+####################################################################################################################
+#проверка параметров платформ и отправка сообщений
+func set_game_ready():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('game_ready')\")
+func set_in_game_loading_started():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('in_game_loading_started')\")
+func set_in_game_loading_stopped():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('in_game_loading_stopped')\")
+func set_gameplay_started():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('gameplay_started')\")
+func set_gameplay_stopped():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('gameplay_stopped')\")
+func set_player_got_achievement():
+	JavaScriptBridge.eval(\"bridge.platform.sendMessage('player_got_achievement')\")
+func get_platform():
+	platform = JavaScriptBridge.get_interface(\"bridge\").platform.id
+	print(\"current platform: \",platform)
+	if platform == \"mock\":
+		native = true
+func get_language():
+	language = JavaScriptBridge.get_interface(\"bridge\").platform.language
+	print(\"current language: \",language)
+func get_payload():
+	payload = JavaScriptBridge.get_interface(\"bridge\").platform.payload
+func get_tld():
+	tld = JavaScriptBridge.get_interface(\"bridge\").platform.tld
+func get_device():
+	device = JavaScriptBridge.get_interface(\"bridge\").device.type
+	print(\"current device: \",device)
+func get_is_authorized():
+	authorized = JavaScriptBridge.get_interface(\"bridge\").player.isAuthorized
+	print(\"player authorized: \",authorized)
+func on_player_authorize():
+	JavaScriptBridge.eval(\"
+		let options = { }
+		switch (bridge.platform.id) {
+			case 'yandex':
+				options = {
+					scopes: true
+				}
+				break
+		}
+		bridge.player.authorize(options)
+			.then(() => {
+			})
+			.catch(error => {
+			})
+	\")
+func get_visibility_state(state):
+	if state == [\"hidden\"]:
+		AudioServer.set_bus_volume_db(0,-80)
+		emit_signal(\"app_hidden\")
+		print(\"app hidden\")
+	if state == [\"visible\"]:
+		AudioServer.set_bus_volume_db(0,0)
+		emit_signal(\"app_hidden\")
+		print(\"app visible\")
+#вызов и статус рекламы
+func on_show_banner():
+	JavaScriptBridge.eval(\"bridge.advertisement.showBanner()\")
+func get_banner_state(state):
+	print(\"banner state: \",state)
+func on_show_interstitial():
+	JavaScriptBridge.eval(\"bridge.advertisement.showInterstitial()\")
+func get_interstitial_state(state):
+	if state == [\"opened\"]:
+		emit_signal(\"ad_open\")
+		AudioServer.set_bus_mute(0, true)
+		print(\"interstitial opened\")
+	if state == [\"closed\"] or state == [\"failed\"]:
+		emit_signal(\"ad_close\")
+		AudioServer.set_bus_mute(0, false)
+		print(\"interstitial closed\")
+func on_show_rewarded():
+	JavaScriptBridge.eval(\"bridge.advertisement.showRewarded()\")
+func get_rewarded_state(state):
+	if state == [\"opened\"]:
+		emit_signal(\"ad_open\")
+		AudioServer.set_bus_mute(0, true)
+		print(\"rewarded opened\")
+	if state == [\"rewarded\"]:
+		emit_signal(\"get_reward\")
+		print(\"get reward\")
+	if state == [\"closed\"] or state == [\"failed\"]:
+		emit_signal(\"ad_close\")
+		AudioServer.set_bus_mute(0, false)
+		print(\"rewarded closed\")
+#облачное сохранение данных
+func on_save_data():
+	for key in data.keys():
+		data_key.append(key)
+	var key_buffer = \"\"
+	for key in data_key:
+		key_buffer += key+\"_\"
+	data_key_string = key_buffer
+	for value in data.values():
+		data_value.append(value)
+	var value_buffer = \"\"
+	for value in data_value:
+		value_buffer += value+\"_\"
+	data_value_string = value_buffer
+	JavaScriptBridge.eval(\"\"\"
+		let storageType = bridge.STORAGE_TYPE.PLATFORM_INTERNAL
+		bridge.storage.set('\"\"\"+str(data_key_string)+\"\"\"', '\"\"\"+str(data_value_string)+\"\"\"', storageType)
+			.then(() => {
+				console.log('Data Saved')
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	\"\"\")
+func on_load_data():
+	for key in data.keys():
+		data_key.append(key)
+	var key_buffer = \"\"
+	for key in data_key:
+		key_buffer += key+\"_\"
+	data_key_string = key_buffer
+	JavaScriptBridge.eval(\"\"\"
+		let storageType = bridge.STORAGE_TYPE.PLATFORM_INTERNAL
+		bridge.storage.get('\"\"\"+str(data_key_string)+\"\"\"', storageType)
+			.then(data => {
+				window.load_data = data
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	\"\"\")
+	await get_tree().create_timer(2).timeout
+	data_value_string = JavaScriptBridge.get_interface(\"window\").load_data
+	data_value.assign(data_value_string.split(\"_\",false))
+	for number in data.size():
+		data[str(data_key[number])] = str(data_value[number])
+	print(\"data: \",data)
+	emit_signal(\"data_loaded\")
+func on_delete_data():
+	for key in data.keys():
+		data_key.append(key)
+	var key_buffer = \"\"
+	for key in data_key:
+		key_buffer += key+\"_\"
+	data_key_string = key_buffer
+	JavaScriptBridge.eval(\"\"\"
+		let storageType = bridge.STORAGE_TYPE.PLATFORM_INTERNAL
+		bridge.storage.delete('\"\"\"+str(data_key_string)+\"\"\"', storageType)
+			.then(() => {
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	\"\"\")
+#функции vk/ok
+#поделиться приложением
+func on_share_app():
+	JavaScriptBridge.eval(\"\"\"
+		let options = { }
+		switch (bridge.platform.id) {
+			case 'vk':
+				options = {
+					link: '\"\"\"+game_link+\"\"\"'
+				}
+				break
+		}
+		bridge.social.share(options)
+			.then(() => {
+			})
+			.catch(error => {
+			})
+	\"\"\")
+#вступить в сообщество
+func on_join_community():
+	JavaScriptBridge.eval(\"\"\"
+		let options = { }
+		switch (bridge.platform.id) {
+			case 'vk':
+				options = {
+					groupId: '\"\"\"+vk_community_id+\"\"\"'
+				}
+				break
+			case 'ok':
+				options = {
+					groupId: '\"\"\"+ok_community_id+\"\"\"'
+					}
+				break
+				}
+		bridge.social.joinCommunity(options)
+			.then(() => {
+			})
+			.catch(error => {
+			})
+	\"\"\")
+#пригласить друзей
+func on_invite_friends():
+	JavaScriptBridge.eval(\"\"\"
+	let options = { }
+	switch (bridge.platform.id) {
+		case 'ok':
+			options = {
+				text: '\"\"\"+invite_text_ok+\"\"\"'
+			}
+		break
+		}
+	bridge.social.inviteFriends(options)
+		.then(() => {
+		})
+		.catch(error => {
+		})
+	\"\"\")
+#создать публикацию
+func on_create_post():
+	JavaScriptBridge.eval(\"\"\"
+	let options = { }
+	switch (bridge.platform.id) {
+		case 'vk':
+			options = {
+				message: '\"\"\"+post_message+\"\"\"',
+				attachments: '\"\"\"+post_attachments+\"\"\"'
+			}
+		break
+		case 'ok':
+			options = {
+				media: [
+					{
+						'type': 'text',
+						'text': '\"\"\"+post_message+\"\"\"'
+					},
+					{
+						'type': 'link',
+						'url': '\"\"\"+post_attachments+\"\"\"'
+					}
+				]
+			}
+		break
+		}
+	bridge.social.createPost(options)
+		.then(() => {
+		})
+		.catch(error => {
+		})
+	\"\"\")
+#добавить в избранное
+func on_add_to_favorites():
+	JavaScriptBridge.eval(\"
+	bridge.social.addToFavorites()
+		.then(() => {
+		})
+		.catch(error => {
+		})
+	\")
+#проверка подписки vk donut
+func on_vk_donut_check():
+	JavaScriptBridge.eval(\"\"\"
+		let url = new URL(window.location.href)
+		let accessToken = url.searchParams.get('access_token')
+		bridge.platform.sdk.send('VKWebAppCallAPIMethod', {
+			method: 'donut.isDon',
+			params: {
+				owner_id: '-\"\"\"+vk_community_id+\"\"\"',
+				v: '5.131',
+				access_token: accessToken 
+			}})
+			.then((data) => { 
+				if (data.response) {
+					console
+					window.vk_donut_subscriber = true
+				}
+				else {
+					window.vk_donut_subscriber = false
+				}
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	\"\"\")
+	await get_tree().create_timer(5).timeout
+	if JavaScriptBridge.get_interface(\"window\").vk_donut_subscriber == true:
+		vk_donut_subscriber = true
+	if JavaScriptBridge.get_interface(\"window\").vk_donut_subscriber == false:
+		vk_donut_subscriber = false
+	if vk_donut_subscriber:
+		print(\"vk donut subscription: true\")
+	else:
+		print(\"vk donut subscription: false\")
+#функции yandex
+#открытие каталога игр разработчика
+func on_open_catalog():
+	get_tld()
+	JavaScriptBridge.eval(\"window.open('https://yandex.\"+str(tld)+str(catalog_link)+\"')\")
+#записать значение в лидерборд yandex
+func on_yandex_leaderboard():
+	JavaScriptBridge.eval(\"\"\"
+		let options = { }
+		switch (bridge.platform.id) {
+			case 'yandex':
+				options = {
+					leaderboardName: '\"\"\"+str(yandex_leaderboard_name)+\"\"\"',
+					score: \"\"\"+str(yandex_result)+\"\"\"
+					}
+					break
+					}
+		bridge.leaderboard.setScore(options)
+			.then(() => {
+			})
+			.catch(error => {
+			})
+		\"\"\")
+#чтение значений в доске лидеров yandex
+func on_read_yandex_leaderboard():
+	JavaScriptBridge.eval(\"\"\"
+		let options = { }
+		switch (bridge.platform.id) {
+			case 'yandex':
+				options = {
+					leaderboardName: '\"\"\"+str(yandex_leaderboard_name)+\"\"\"',
+					}
+					break
+					}
+		bridge.leaderboard.getScore(options)
+			.then(score => {
+				window.load_score = score
+			})
+			.catch(error => {
+			})
+		\"\"\")
+	await get_tree().create_timer(2).timeout
+	yandex_result = JavaScriptBridge.get_interface(\"window\").load_score
+#загрузка таблицы доски лидеров yandex
+func on_yandex_leaderboard_get_entries():
+	JavaScriptBridge.eval(\"\"\"
+	let options = { }
+	switch (bridge.platform.id) {
+		case 'yandex':
+			options = {
+				leaderboardName: '\"\"\"+str(yandex_leaderboard_name)+\"\"\"',
+				\"includeUser\": \"\"\"+str(yandex_leaderboard_entries_include)+\"\"\",
+				\"quantityAround\": \"\"\"+str(yandex_leaderboard_entries_around)+\"\"\",
+				\"quantityTop\": \"\"\"+str(yandex_leaderboard_entries_top)+\"\"\"
+				}
+				break
+				}
+	bridge.leaderboard.getEntries(options)
+	.then(entries => {
+		window.load_entries = entries
+	})
+	.catch(error => {
+	})
+	\"\"\")
+	await get_tree().create_timer(2).timeout
+	var loaded_leaderboard_entries = JavaScriptBridge.get_interface(\"window\").load_entries
+	print(\"entries: \",yandex_leaderboard_entries)
+	yandex_leaderboard_entries = []
+	for i in range(loaded_leaderboard_entries.length):
+		var loaded_entries = loaded_leaderboard_entries[i]
+		var entries_dict = {
+			\"id\": loaded_entries.id,
+			\"score\": loaded_entries.score,
+			\"rank\": loaded_entries.rank,
+			\"name\": loaded_entries.name,
+			}
+		yandex_leaderboard_entries.append(entries_dict)
+	emit_signal(\"yandex_leaderboard_entries_loaded\")
+"
+
+[node name="igbgui" type="Node"]
+process_mode = 3
+script = SubResource("GDScript_by2q4")
+yandex_leaderboard = true
+yandex_leaderboard_name = "Good"
+yandex_leaderboard_entries_top = 3

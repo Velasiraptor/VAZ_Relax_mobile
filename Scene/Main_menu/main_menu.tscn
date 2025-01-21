@@ -1,0 +1,139 @@
+[gd_scene load_steps=11 format=3 uid="uid://ca31c4xm61q4j"]
+
+[ext_resource type="Texture2D" uid="uid://hutq15dyiorp" path="res://Sprites/UI/Main_menu/Main_menu_RU.png" id="1_ipvmy"]
+[ext_resource type="Script" path="res://Scene/Main_menu/main_menu.gd" id="1_mt20u"]
+[ext_resource type="Texture2D" uid="uid://bmbolrm2lc46a" path="res://Sprites/UI/Main_menu/Button_sprite.png" id="2_dwqkr"]
+[ext_resource type="Texture2D" uid="uid://b80yv2s04a0pe" path="res://Sprites/UI/Main_menu/Button_hover_sprite.png" id="3_k255e"]
+[ext_resource type="Texture2D" uid="uid://dtpn8khgdjar0" path="res://Sprites/UI/Main_menu/Authorization_button.png" id="3_rabvo"]
+[ext_resource type="FontFile" uid="uid://c3bko54iadpdh" path="res://Font_Russia.ttf" id="4_ofts7"]
+[ext_resource type="Texture2D" uid="uid://clte1vnbkubg7" path="res://Sprites/UI/Main_menu/Authorization_button_hover.png" id="4_olb4y"]
+[ext_resource type="Texture2D" uid="uid://dswckfroogno3" path="res://Sprites/UI/Main_menu/RU.png" id="6_mycom"]
+[ext_resource type="AudioStream" uid="uid://dklc0cfx47tmf" path="res://Sounds/Music/Music_menu.mp3" id="7_k0qoa"]
+[ext_resource type="PackedScene" uid="uid://cgs3ocsniws7t" path="res://igbgui.tscn" id="8_gqo41"]
+
+[node name="Main_menu" type="Control" groups=["Language"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mt20u")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(963.5, 544)
+scale = Vector2(1.41009, 1.41667)
+texture = ExtResource("1_ipvmy")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1096, 198)
+scale = Vector2(2, 2)
+
+[node name="CenterContainer" type="CenterContainer" parent="Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 14.0
+offset_right = 500.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/CenterContainer"]
+layout_mode = 2
+
+[node name="Button_Play" type="TextureButton" parent="Node2D/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_dwqkr")
+texture_hover = ExtResource("3_k255e")
+
+[node name="Label_play" type="Label" parent="Node2D/CenterContainer/VBoxContainer/Button_Play"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 64.0
+offset_top = 1.16666
+offset_right = 207.0
+offset_bottom = 63.1667
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("4_ofts7")
+theme_override_font_sizes/font_size = 50
+text = "Играть"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+
+[node name="Language_icon" type="TextureButton" parent="Node2D"]
+unique_name_in_owner = true
+offset_left = 305.0
+offset_top = 192.0
+offset_right = 1073.0
+offset_bottom = 961.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_mycom")
+
+[node name="Label_Language" type="Label" parent="Node2D/Language_icon"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1320.0
+offset_top = 200.0
+offset_right = -735.0
+offset_bottom = 506.0
+theme_override_fonts/font = ExtResource("4_ofts7")
+theme_override_font_sizes/font_size = 250
+text = "Язык"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_auth" type="TextureButton" parent="Node2D"]
+offset_left = 315.0
+offset_top = 30.0
+offset_right = 760.0
+offset_bottom = 475.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("3_rabvo")
+texture_hover = ExtResource("4_olb4y")
+
+[node name="Label_auth" type="Label" parent="Node2D/Button_auth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1116.0
+offset_top = -6.0
+offset_right = -14.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("4_ofts7")
+theme_override_font_sizes/font_size = 160
+text = "Авторизируйся,"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_auth_bottom" type="Label" parent="Node2D/Button_auth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1026.0
+offset_top = 180.0
+offset_right = -97.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("4_ofts7")
+theme_override_font_sizes/font_size = 100
+text = "чтобы записывать 
+рекорд в лидерборд!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_k0qoa")
+volume_db = -10.0
+autoplay = true
+
+[node name="igbgui" parent="." instance=ExtResource("8_gqo41")]
+game_ready = true
+
+[connection signal="pressed" from="Node2D/CenterContainer/VBoxContainer/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Node2D/Language_icon" to="." method="_on_language_icon_pressed"]
+[connection signal="pressed" from="Node2D/Button_auth" to="." method="_on_button_auth_pressed"]
